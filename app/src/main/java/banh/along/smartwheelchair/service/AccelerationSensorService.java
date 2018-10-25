@@ -7,9 +7,17 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Environment;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 
 public class AccelerationSensorService extends Service implements SensorEventListener{
@@ -30,6 +38,7 @@ public class AccelerationSensorService extends Service implements SensorEventLis
                 SensorManager.SENSOR_DELAY_NORMAL);
         Toast.makeText(getApplicationContext(),"Đang ở trong onStartCommand", Toast.LENGTH_LONG).show();
 
+
         return START_STICKY;
     }
 
@@ -48,6 +57,8 @@ public class AccelerationSensorService extends Service implements SensorEventLis
 
         double giatoc = Math.sqrt(ax * ax + ay * ay + az * az);
         String stCoor = ax + " " + ay + " " + az + " " + giatoc;
+        long time = System.currentTimeMillis();
+        String body = time + "  " + stCoor;
 
 
 
@@ -70,6 +81,29 @@ public class AccelerationSensorService extends Service implements SensorEventLis
     public void onDestroy() {
         super.onDestroy();
         Toast.makeText(getApplicationContext(),"Đang ở trong onDestroy", Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * Hàm ghi tập tin trong Android
+     * dùng openFileOutput để ghi
+     * openFileOutput tạo ra FileOutputStream
+     */
+    public void writeData(String data)
+    {
+        String sdcard=Environment
+                .getExternalStorageDirectory()
+                .getAbsolutePath()+"/longyeubanh.txt";
+        try {
+            OutputStreamWriter writer=
+                    new OutputStreamWriter(
+                            new FileOutputStream(sdcard));
+            writer.write(data);
+            writer.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
