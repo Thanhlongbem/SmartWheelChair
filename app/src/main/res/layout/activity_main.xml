@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_home2"
+    >
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"/>
+
+
+    <TextView
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đại học Quốc gia Hà Nội"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đại học Công Nghệ"
+        android:textSize="22sp"/>
+
+
+
+
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:text="Chọn chế độ điều khiển"
+        android:layout_marginTop="50dp"
+        />
+
+
+    <Button
+        android:drawablePadding="4dp"
+        android:padding="8dp"
+        android:gravity="center"
+        android:drawableLeft="@drawable/ic_mic_black_24dp"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:background="@drawable/round_button"
+        android:layout_marginTop="20dp"
+        android:text="Điều khiển bằng giọng nói"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/btnONOFF"/>
+
+    <Button
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:drawableLeft="@drawable/ic_hand"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:background="@drawable/round_button"
+        android:layout_marginTop="10dp"
+        android:text="Điều khiển bằng tay"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/btnTay"/>
+
+    <Button
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:drawableLeft="@drawable/ic_setup"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:background="@drawable/round_button"
+        android:layout_marginTop="10dp"
+        android:text="Cài đặt"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/btnSetUp"/>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
