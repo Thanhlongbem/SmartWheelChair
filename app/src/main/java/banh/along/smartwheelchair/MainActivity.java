@@ -61,12 +61,18 @@ public class MainActivity extends AppCompatActivity{
         };
         //registering our receiver
         this.registerReceiver(mReceiver, intentFilter);
+        btnONOFF = findViewById(R.id.btnONOFF);
+        btnONOFF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GoogleVoiceDetectActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
-
-
-        BTAdapter = BluetoothAdapter.getDefaultAdapter();
+        /*BTAdapter = BluetoothAdapter.getDefaultAdapter();
         pairedDevices = BTAdapter.getBondedDevices();
         final ArrayList list = new ArrayList();
         btnONOFF = findViewById(R.id.btnONOFF);
@@ -113,7 +119,7 @@ public class MainActivity extends AppCompatActivity{
 
             AlertDialog alertDialog = builder.create();
             alertDialog.show();
-        }
+        }*/
 
 
 
